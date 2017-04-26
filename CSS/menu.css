@@ -1,0 +1,42 @@
+/*drop down box styling*/
+nav > ul > li > ul  {
+	visibility: hidden;
+	color: red;
+	
+}
+
+
+
+
+nav ul {
+	padding: 0;
+	list-style: none;
+	position: absolute;
+	background-color: lightgreen;
+}
+
+nav li {
+	padding: 10px 20px;
+}
+
+
+/*the main horizontal navigation bar list items*/
+nav > ul > li {
+	display: inline;
+	background-color: lightyellow;
+	float: left; /*without this every drop down menu aligns with the left edge of the nav bar*/
+}
+
+nav > ul > li:hover * {
+	visibility: visible;
+}
+
+/*submenus for drop down boxes, extending right from drop down menu*/
+nav > ul > li > ul > li > ul {
+	visibility: hidden;
+	color: blue;
+}
+
+nav > ul > li > ul > li:hover {
+	visibility: visible;
+}
