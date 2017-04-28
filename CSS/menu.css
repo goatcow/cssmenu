@@ -4,6 +4,7 @@ TRYING TO FIND A MORE FLUID SOLUTION TO THIS BUT CANNOT.*/
 
 body, html {
 	margin: 0;
+	font-family: sans-serif;
 }
 
 nav ul {
@@ -14,8 +15,8 @@ nav ul {
 
 nav li {
 	padding: 0px;
-	position: relative;
 	background-color: lightgreen;
+
 }
 
 nav a {
@@ -25,22 +26,25 @@ nav a {
 	padding: 10px;
 	height: 40px;
 	line-height: 40px; /*same as height to center the text vertically*/
+	
+	
+	border: 1px solid black;
+	margin-bottom: -1px;
+	margin-right: -1px;
 }
 
 nav li ul { /*for any ul that is a decendant of a list element*/
-	position: absolute; /*positions the drop down ul relative to its first ancestor so it drops down in line with the main menu bar.*/
 	display: none;
-
 }
 
 /*the main horizontal navigation bar list items*/
 nav > ul > li {
 	display: inline-block;
-	float: left; /*without this every drop down menu aligns with the left edge of the nav bar, despite my display: inline*/
+	float: left; /*without this every drop down menu aligns with the left edge of the nav bar, despite my display: inline, probably the way lists display*/
 }
 
 nav li:hover > ul {
-	display: block;
+	display: block; /*gives the menu drop down vertical separation (carriage returns on each element)*/
 }
 
 nav li > ul > li:hover > ul { /*hover on any menu tierfrom drop downs on*/
@@ -48,7 +52,9 @@ nav li > ul > li:hover > ul { /*hover on any menu tierfrom drop downs on*/
 }
 
 nav ul > li > ul { /*position of any menu tier from drop downs on*/
-	 position: absolute;
-
+	 position: absolute; /*absolute positioning so that menus dont alter other elements positioning*/
 }
 
+nav li:hover {
+	background-color: lightyellow;
+}
