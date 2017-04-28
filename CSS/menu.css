@@ -1,42 +1,54 @@
-/*drop down box styling*/
-nav > ul > li > ul  {
-	visibility: hidden;
-	color: red;
-	
+/*OK THE LESSON LEARNED HERE IS TO GET YOUR MENU DROP DOWNS TO ALIGN CORRECTLY YOU NEED TO REMOVE THE MARGIN AND PADDING
+FROM THE UL AND LI AND ADD IT TO THE PADDING STYLE TO THE HYPERLINKS OR A SPAN OF TEXT INSIDE THE LI ITEM. SPENT HOURS
+TRYING TO FIND A MORE FLUID SOLUTION TO THIS BUT CANNOT.*/
+
+body, html {
+	margin: 0;
 }
-
-
-
 
 nav ul {
 	padding: 0;
+	margin: 0;
 	list-style: none;
-	position: absolute;
-	background-color: lightgreen;
 }
 
 nav li {
-	padding: 10px 20px;
+	padding: 0px;
+	position: relative;
+	background-color: lightgreen;
 }
 
+nav a {
+	text-decoration: none; /*removes the underline in the hyperlinks*/
+	display: inline-block; /*allows width specification, with the default display:inline width doesn't work*/
+	width: 120px;
+	padding: 10px;
+	height: 40px;
+	line-height: 40px; /*same as height to center the text vertically*/
+}
+
+nav li ul { /*for any ul that is a decendant of a list element*/
+	position: absolute; /*positions the drop down ul relative to its first ancestor so it drops down in line with the main menu bar.*/
+	display: none;
+
+}
 
 /*the main horizontal navigation bar list items*/
 nav > ul > li {
+	display: inline-block;
+	float: left; /*without this every drop down menu aligns with the left edge of the nav bar, despite my display: inline*/
+}
+
+nav li:hover > ul {
+	display: block;
+}
+
+nav li > ul > li:hover > ul { /*hover on any menu tierfrom drop downs on*/
 	display: inline;
-	background-color: lightyellow;
-	float: left; /*without this every drop down menu aligns with the left edge of the nav bar*/
 }
 
-nav > ul > li:hover * {
-	visibility: visible;
+nav ul > li > ul { /*position of any menu tier from drop downs on*/
+	 position: absolute;
+
 }
 
-/*submenus for drop down boxes, extending right from drop down menu*/
-nav > ul > li > ul > li > ul {
-	visibility: hidden;
-	color: blue;
-}
-
-nav > ul > li > ul > li:hover {
-	visibility: visible;
-}
