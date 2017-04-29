@@ -16,21 +16,23 @@ nav ul {
 nav li {
 	padding: 0px;
 	background-color: lightgreen;
-
 }
 
 nav a {
 	text-decoration: none; /*removes the underline in the hyperlinks*/
 	display: inline-block; /*allows width specification, with the default display:inline width doesn't work*/
-	width: 120px;
+	/*width: 120px;  if you want specify a width for the displayed menu bar*/
 	padding: 10px;
-	height: 40px;
 	line-height: 40px; /*same as height to center the text vertically*/
 	
-	
+
 	border: 1px solid black;
 	margin-bottom: -1px;
 	margin-right: -1px;
+}
+
+nav li ul a {
+	width: 150px;
 }
 
 nav li ul { /*for any ul that is a decendant of a list element*/
@@ -41,6 +43,7 @@ nav li ul { /*for any ul that is a decendant of a list element*/
 nav > ul > li {
 	display: inline-block;
 	float: left; /*without this every drop down menu aligns with the left edge of the nav bar, despite my display: inline, probably the way lists display*/
+
 }
 
 nav li:hover > ul {
@@ -57,4 +60,8 @@ nav ul > li > ul { /*position of any menu tier from drop downs on*/
 
 nav li:hover {
 	background-color: lightyellow;
+}
+
+header + * {
+	clear: left;
 }
