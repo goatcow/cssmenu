@@ -57,7 +57,9 @@ nav li:hover > ul {
 }
 
 nav ul ul > li:hover > ul { /*hover on any menu tier after the drop downs, display to the right of the box*/
-	display: inline; /*******problem is possible here, only works in firefox and edge, not chrome and opera*/
+	display: inline-block; 
+	left: 100%;
+	top: 0;
 }
 
 nav li:hover {
@@ -72,3 +74,4 @@ header + * {
 nav + * {
 	clear: left;
 }
+
