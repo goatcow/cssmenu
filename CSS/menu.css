@@ -51,15 +51,13 @@ nav ul ul { /*position of any menu tier from drop downs on*/
 	 position: absolute; /*absolute positioning so that menus dont alter other elements positioning*/
 }
 
-/********BIG ISSUE HERE: in the below 2 hovers the display property of inline flows the menu out to the right as wanted in firefox and edge but straight down in block style in opera and chrome. inline just seems to be ignored.*/
 nav li:hover > ul {
 	display: block; /*gives the menu drop down vertical separation (carriage returns on each element)*/
 }
 
-nav ul ul > li:hover > ul { /*hover on any menu tier after the drop downs, display to the right of the box*/
-	display: inline-block; 
+nav ul ul li:hover > ul { /*hover on any menu tier after the drop downs, display to the right of the box*/
+	display: inline-block;
 	left: 100%;
-	top: 0;
 }
 
 nav li:hover {
